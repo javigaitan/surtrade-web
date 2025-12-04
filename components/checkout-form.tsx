@@ -47,8 +47,8 @@ export function CheckoutForm() {
         items: items.map((item) => ({
           name: item.product.name,
           quantity: item.quantity,
-          category: item.product.category
-          
+          category: item.product.category,
+          subcategory: item.product.category,
         })),
       }
 
