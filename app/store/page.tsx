@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CartDrawer } from "@/components/cart-drawer"
 import { ProductStore } from "@/components/product-store"
+import { Suspense } from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export default function StorePage() {
     <>
       <Navigation />
       <main className="min-h-screen">
-        <ProductStore />
+        <Suspense fallback={<div>Cargando productos...</div>}>
+          <ProductStore />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
