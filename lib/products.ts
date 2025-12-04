@@ -14,7 +14,8 @@ export async function getAllProducts(): Promise<Product[]> {
     }
     const data = await response.json()
     cachedProducts = data.products
-    return cachedProducts
+return cachedProducts ?? []
+
   } catch (error) {
     console.error("[v0] Error loading products:", error)
     return []
